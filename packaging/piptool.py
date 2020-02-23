@@ -107,7 +107,7 @@ parser.add_argument('--extra_pip_args', action='store',
 
 def sort_wheels(whls):
   """Sorts a list of wheels deterministically."""
-  return sorted(whls, key=lambda w: w.distribution + '_' + w.version())
+  return sorted(whls, key=lambda w: w.distribution() + '_' + w.version())
 
 def determine_possible_extras(whls):
   """Determines the list of possible "extras" for each .whl
